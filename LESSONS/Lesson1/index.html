@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <p v-once>{{title}}</p>
+      <p>{{hello()}}</p>
+      <p v-html="bloglink"></p>
+      <a v-bind:href="link">clarusway</a>
+      <input type="text" v-on:input="changeTitle" />
+      <button v-on:click="showAlert">Alert</button>
+      <button v-on:click="showAlert('ibrahim')">Alert2</button>
+      <div>
+        <p>{{counter}}</p>
+        <button v-on:click="counter++">Increase</button>
+        <button v-on:click="counter--">Decrease</button>
+        <p>{{counter>10? "counter value is bigger then 10":"counter value is smaller than 10"}}</p>
+        <button v-on:click="reset">Reset</button>
+      </div>
+      <div>
+        <p v-on:mousemove="showCoordinates(2,$event)">Coordinates:x:{{x}},y:{{y}}
+            <span v-on:mousemove.stop>Dont change values if mouse over me!!!</span>
+
+        </p>
+        <div>
+          <input type="text" v-on:keyup.enter.space="showAlert">
+          <input type="text" v-on:change="showAlert" placeholder="input2">
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="first">
+      <h2>First EXAMPLE</h2>
+      <p>{{name}} {{age}}</p>
+      <p>{{age*5}}</p>
+      <p>{{generateNumber()}}</p>
+      <img v-bind:src="imageUrl" alt="image" />
+      <input v-on:input="changeName" />
+
+      <div>
+        <h2>second Example</h2>
+        <div style="margin: 10px">
+          <button v-on:click="showMeAlert">Show Alert</button>
+        </div>
+        <div>
+          <input v-on:keydown="showInputValue">Show Input</input>
+          <p>{{inputVal}}</p>
+        </div>
+        <div>
+          <input v-on:keydown.enter="showInputValue2">Show Input2</input>
+          <p>{{inputVal2}}</p>
+        </div>
+       
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="Exercise.js"></script>
+  </body>
+</html>
