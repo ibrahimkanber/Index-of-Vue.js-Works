@@ -27,6 +27,15 @@
           <input v-on:keydown.enter="showInputValue2">Show Input2</input>
           <p>{{inputVal2}}</p>
         </div>
+
+        <div class="section">
+          <p>{{exercise3Value}}</p>
+          <button @click="exercise3Value+=5">Add 5</button>
+          <button @click="exercise3Value+=1">Add 1</button>
+          <input type="number" v-model="resetDuration">
+          <p>{{exerciseResult}}</p>
+          <p>{{resetDuration}}</p>
+        </div>
        
       </div>
     </div>
