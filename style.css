@@ -11,9 +11,10 @@ body {
 }
 
 #app{
-    width:80%;
+    width:100%;
     display:flex;
-    flex-wrap:wrap
+    flex-wrap:wrap;
+    justify-content:center;
     
 }
 
@@ -35,7 +36,7 @@ body {
     margin:15px;
     background-color:skyblue;
     padding:20px;
-    width:500px;
+    width:450px;
     min-height:400px;
     height:fit-content;
     border-radius: 10px;
@@ -99,7 +100,7 @@ body {
 }
 
 .button{
-    display:inline-block;
+   
     margin:auto;
     padding:10px 20px;
     border:none;
@@ -109,6 +110,21 @@ body {
     outline:none;
     border:none
 
+}
+
+.button1{
+    margin-top:10px;
+    padding:10px 20px;
+    border:none;
+    font-size:20px;
+    border-radius: 10px;
+    outline:none;
+    border:none
+}
+
+.button1:hover{
+    background-color:rosybrown;
+    color:white;
 }
 
 .counter{
@@ -128,4 +144,79 @@ body {
     background-color:rosybrown;
     color:white;
    
+}
+
+.shrink{
+    background-color:gray;
+    width:150px !important
+}
+
+
+.hightlight{
+    background-color:red;
+    width: 400px !important;
+}
+
+#effect{
+    width:250px;
+    height:200px;
+    border: 1px solid black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white
+}
+
+.exercisebox{
+    margin: 10px;
+    background-color: rgb(107, 190, 112);
+    display:flex;
+    align-items:center;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.boxWidth{
+    width:200px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:10px
+}
+.boxHeight{
+    height:200px
+}
+.boxColor{
+    background-color: white
+}
+
+.shrinkWidth{
+    width:75px
+}
+.mediumWidth{
+    width:200px
+}
+.largeWidth{
+    width:300px
+}
+
+.smallHeight{
+    height:75
+}
+.mediumHeight{
+    height:200px
+}
+.heighHeight{
+    height:300px
+}
+
+.progressContainer{
+    height:20px;
+    width:300px;
+    background-color: white;
+    margin:10px;
+    border-radius: 10px;
+    display:flex;
+    justify-content:center;
+    align-items:center
 }

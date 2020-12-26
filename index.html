@@ -214,9 +214,55 @@
       The height value of box 4 is changed with input.
     </p>
 
-  </div>
-        
+        </div> 
+
+
+        <div class="section" >
+          <div class="exercisebox">
+              <div :class="selectedClass" id="effect">
+              When you click the button, the color and width value will change every second.
+              </div>
+              <button class="button1" @click="changeFlag">Start</button>
+          </div>
+          <div class="exercisebox">
+              <div :class="[{boxHeight:true},{boxWidth:true},{boxColor:true}]">
+                i dont have any class yet
+              </div>
+          </div>
+          <div class="exercisebox">
+              <p>Enter className</p>
+              <p>1.box <br> 2.hightlight <br>  3.shrink <br> 4.box <br>  5.green <br>  6.red <br> 7.button</p>
+              <input type="text" v-model="className" class="input">
+             
+              <div :class="className" id="effect"></div>
+          </div>
+          <div class="exercisebox">
+            <p>1.shrinkWidth---2.mediumWidth---3.largeWidth</p>
+            <input type="text" v-model="className4Width" class="input" placeholder="enter class name for width" >
+            <p>1.smallHeight---2.mediumHeight---3.heighHeight</p>
+            <input type="text" v-model="className4Height" class="input" placeholder="enter class name for height">
+            <div class="box" :class="[className4Height,className4Width]"></div>
+          </div>
+          <div class="exercisebox">
+            <input type="text" v-model="backgrounColor" class="input" placeholder="enter colorName"  >
+            <div class="box" :style="customStyle1"></div>
+          </div>
+          <div class="exercisebox">
+            <div class="progressContainer">
+              <div :style="{width: barLength+'px'}" style="height: 10px;background-color: red;"></div>
+              <p>{{barLength}}</p>
+            </div>
+            <button @click="startProgress">Start Progress</button>
+          </div>
+          
       </div>
+
+    </div>
+
+
+
+
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="script.js"></script>

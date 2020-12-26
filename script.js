@@ -18,6 +18,15 @@ new Vue({
     color:"",
     newColor:"",
     height:100,
+    width:100,
+    selectedClass:"",
+    flag:true,
+    className:"",
+    className4Width:"",
+    className4Height:"",
+    backgrounColor:"",
+    barLength:0,
+    interval:"",
 
     },
     
@@ -43,7 +52,22 @@ new Vue({
       },
       result:function(){
         return this.counternew >10 ? "bigger then 10":"smaller than 10"
-      }
+      },
+
+      changeFlag:function(){
+       console.log("hello")
+        setInterval(()=>{
+          this.flag = !this.flag
+        },1000)
+      },
+      startProgress:function(){
+        this.interval=setInterval(()=>{
+          this.barLength+=10
+        },1000)
+      
+      },
+      
+
     
     },
 
@@ -65,7 +89,13 @@ new Vue({
           backgroundColor:this.newColor,
           height:this.height+"px"
         }
-      }
+      },
+      customStyle1:function(){
+          return{
+            backgroundColor:this.backgrounColor
+          }
+        },
+
     },
 
     watch:{
@@ -81,7 +111,25 @@ new Vue({
           setTimeout(function(){
             vm.exercise3Value=0
           },this.resetDuration*1000)
+        },
+
+        flag:function(val){
+          if(val){
+            this.selectedClass="shrink"
+          }else{
+            this.selectedClass="hightlight"
+          }
+
+        },
+
+        barLength:function(val){
+
+          if(val>290){
+            clearInterval(this.interval)
+          }
+
         }
+        
     },
  
   })
