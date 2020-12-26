@@ -21,14 +21,37 @@ new Vue({
     width:100,
     selectedClass:"",
     flag:true,
+    flag1:true,
     className:"",
     className4Width:"",
     className4Height:"",
     backgrounColor:"",
     barLength:0,
     interval:"",
+    show:true,
+    number:10,
+    showPar:false,
+    products:["computer","mobile phone","tablet"],
+    persons:[
+      {name:"ibrahim",email:"ibrahim@gmail.com"},
+      {name:"Mehmet",email:"mehmet@gmail.com"},
+      {name:"Oguz",email:"oguz@gmail.com"},
+    ],
+
+    myArr:["walter","edward","john"],
+    customObj:{
+      title:"Game of Thrones",
+      author:"George R.R",
+      books:"7"
+    },
+    testData:{
+      name:"nested loop",
+      id:10,
+      data:[3,45,19,14.02,20.30,20.18]
+    }
 
     },
+    
     
     methods:{
         changeTitle:function(event){

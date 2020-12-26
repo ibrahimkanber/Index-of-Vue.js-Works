@@ -218,6 +218,7 @@
 
 
         <div class="section" >
+          <h3 class="sectionHeader">EXERCISE</h3>
           <div class="exercisebox">
               <div :class="selectedClass" id="effect">
               When you click the button, the color and width value will change every second.
@@ -252,11 +253,91 @@
               <div :style="{width: barLength+'px'}" style="height: 10px;background-color: red;"></div>
               <p>{{barLength}}</p>
             </div>
-            <button @click="startProgress">Start Progress</button>
+            <button @click="startProgress" class="button1">Start Progress</button>
           </div>
-          
       </div>
 
+      <div class="section">
+        <h3 class="sectionHeader">v-if v-show</h3>
+        <p v-if="show">Now you see me 1</p>
+        <p v-else>Now you see me 2</p>
+        <button @click="show=!show" class="button">Show /Hide</button>
+
+        <p v-if="number>10">Number > 10 </p>
+        <p v-else-if="number<10">Number < 10</p>
+        <p v-else>Number : 10</p>
+        <button @click="number++" class="button">Increase</button>
+        <button @click="number--" class="button">Decrease</button>
+        <hr>
+
+        <button @click="showPar=!showPar" class="button">Show/Hide</button>
+        <p v-show="showPar">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae quidem non, sed quia molestias necessitatibus voluptatibus nesciunt illum libero aspernatur.</p>
+      </div>
+
+      <div class="section">
+        <h3 class="sectionHeader">V-for--template</h3>
+        <div v-for="(product,index) in products" style="border:1px solid red">
+          <p>{{product}}--{{index}}</p>
+        </div>
+
+        <template  v-for="(product,index) in products">
+          <p>{{product}}--{{index}}</p>
+        </template>
+        <button @click="products.push('soundspeaker')" class="button">Add</button>
+      </div>
+      <div class="section">
+        <ul>
+          <li v-for="person in persons">
+            <ul>
+              <li v-for="(item,key,index) in person" :key="index"> {{key}}:{{item}} {{index}}</li>
+            </ul>
+          </li>
+        </ul>
+        <span v-for="i in 5">{{i}},</span>
+      </div>
+      <div class="section">
+        <div class="exercisebox">
+          <p v-if="flag">Now you see me 1</p>
+          <p v-else>Now you see me 2</p>
+          <button class="button" @click="flag=!flag">toggle (v-if)</button>
+          <hr>
+          <p v-show="flag1">Now you see me 1</p>
+          <p v-show="!flag1">Now you see me 2</p>
+          <button class="button" @click="flag1=!flag1">toggle(v-show)</button>
+        </div>
+        <div class="exercisebox">
+          <p>data:myArr=["walter","edward","john"]</p>
+          <ul>
+            <li v-for="(el,i) in myArr" :key="i">{{i}}--->{{el}}</li>
+          </ul>
+        </div>
+        <div class="exercisebox">
+          <p>    customObj:{
+            title:"Game of Thrones",
+            author:"George R.R",
+            books:"7"
+          }</p>
+     
+          <ul>
+            <li v-for="(item,key,index) in customObj">
+              <strong>{{key}}:</strong>{{item}}--index:{{index}}
+            </li>
+          </ul>
+        </div>
+        <div class="exercisebox">
+          <ul>
+            <li v-for="(item,key,index) in testData">
+              <strong>{{key}}:</strong>{{item}}--index:{{index}}
+             <ul v-if="key=='data' ">
+               <li v-for="item in item">{{item}}</li>
+             </ul>
+
+            </li>
+          </ul>
+        </div>
+
+      </div>
+ 
     </div>
 
 
